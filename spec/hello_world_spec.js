@@ -1,7 +1,7 @@
 "use strict";
 const request = require("request");
 const helloWorld = require("../index.js");
-const moduleLoader = require("../app/module.js");
+const moduleLoader = require("../app/module");
 var base_url = "http://localhost:3000/";
 describe("Hello World Server", () => {
     var moduleClass;
@@ -25,6 +25,11 @@ describe("Hello World Server", () => {
     });
     //xdescribe ==> ignore test
     describe("test module", () => {
+        it("test spyOn and mock something", () => {
+            let x = new moduleLoader.Module1();
+            let spy = spyOn(x, "f1").andReturn(20);
+            expect(x.f1()).toBe(20);
+        });
         it("first f1 function must return 1", () => {
             expect(moduleClass.f1()).toBe(1);
             expect(moduleClass.f1()).toBe(2);

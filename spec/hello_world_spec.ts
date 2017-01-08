@@ -1,11 +1,11 @@
 import * as request from "request";
 import * as helloWorld from "../index.js"
-import * as moduleLoader from "../app/module.js"
+import * as moduleLoader from "../app/module"
 
-var base_url = "http://localhost:3000/"
+var base_url = "http://localhost:3000/";
 
 describe("Hello World Server", () => {
-    var moduleClass : moduleLoader.Module1;
+    var moduleClass: moduleLoader.Module1;
     beforeEach(() => {
         moduleClass = new moduleLoader.Module1();
     });
@@ -28,7 +28,14 @@ describe("Hello World Server", () => {
     });
 
     //xdescribe ==> ignore test
-    describe("test module", ()=> {
+    describe("test module", () => {
+
+        it("test spyOn and mock something", () => {
+            let x = new moduleLoader.Module1();
+            let spy = (spyOn(x, "f1") as any).andReturn(20);
+            expect(x.f1()).toBe(20);
+        });
+
         it("first f1 function must return 1", () => {
             expect(moduleClass.f1()).toBe(1);
             expect(moduleClass.f1()).toBe(2);
