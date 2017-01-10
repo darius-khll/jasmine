@@ -12,3 +12,9 @@ var server = app.listen(3000);
 export function closeServer() {
     server.close();
 }
+
+// declare namespace jasmine{
+//     interface Spy {
+//         andReturn(object: any): any;
+//     }
+// }

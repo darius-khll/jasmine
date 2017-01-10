@@ -10,4 +10,9 @@ function closeServer() {
     server.close();
 }
 exports.closeServer = closeServer;
+// declare namespace jasmine{
+//     interface Spy {
+//         andReturn(object: any): any;
+//     }
+// } 
 //# sourceMappingURL=index.js.map
