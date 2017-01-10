@@ -1,9 +1,21 @@
 
-export class Module1 {
-    private field: number = 0;
+export class MyModule {
+    private someField: number = 0;
 
-    public f1(): number {
-        this.field++;
-        return this.field;
+    public syncMethod(): number {
+        this.someField++;
+        return this.someField;
     }
+
+    public async asyncMethod(num: number): Promise<number> {
+        return new Promise<number>((res, rej) => {
+            setTimeout(() => {
+                res(10 + 1);
+            }, 100);
+        })
+    }
+}
+
+export function globalMethod(): string {
+    return 'wow';
 }
