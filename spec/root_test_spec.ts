@@ -5,7 +5,7 @@ import * as injectedModule from "../app/module"
 var base_url = "http://localhost:3000/";
 
 describe("test server.", () => {
-    
+
     describe("http get of root.", () => {
         it("root should return 200 status code.", (done) => {
             request.get(base_url, (error, response, body) => {
@@ -20,6 +20,16 @@ describe("test server.", () => {
                 index.closeServer();
                 done();
             });
+        });
+    });
+
+    describe("http get of root using async await.", () => {
+        it("root should return 200 status code.", async (done) => {
+            console.warn("wowowow");
+            let obj = await index.CustomRequest.get(base_url);
+            console.warn("res code: " + obj.response.statusCode);
+            expect(obj.response.statusCode).toBe(200);
+            done();
         });
     });
 });
