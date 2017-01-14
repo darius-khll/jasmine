@@ -17,7 +17,6 @@ describe("test server.", () => {
         it("root should returns 'Hello World' in it's body", (done) => {
             request.get(base_url, (error, response, body) => {
                 expect(body).toBe("Hello World");
-                index.closeServer();
                 done();
             });
         });
@@ -29,6 +28,7 @@ describe("test server.", () => {
             let obj = await index.CustomRequest.get(base_url);
             console.warn("res code: " + obj.response.statusCode);
             expect(obj.response.statusCode).toBe(200);
+            index.closeServer();
             done();
         });
     });
