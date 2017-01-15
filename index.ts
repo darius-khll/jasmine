@@ -26,7 +26,7 @@ interface ICustomRequestTaken {
 }
 
 export class CustomRequest {
-    public static async get(uri: string): Promise<ICustomRequestTaken> {
+    public static get(uri: string): Promise<ICustomRequestTaken> {
         return new Promise<ICustomRequestTaken>((res, rej) => {
             request.get(uri, (error, response, body) => {
                 console.log(body);
