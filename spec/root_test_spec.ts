@@ -24,9 +24,7 @@ describe("test server.", () => {
 
     describe("http get of root using async await.", () => {
         it("root should return 200 status code.", async (done) => {
-            console.warn("wowowow");
             let obj = await index.CustomRequest.get(base_url);
-            console.warn("res code: " + obj.response.statusCode);
             expect(obj.response.statusCode).toBe(200);
             index.closeServer();
             done();
