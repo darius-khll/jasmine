@@ -3,7 +3,6 @@ import * as express from "express";
 var app = express();
 
 app.get('/', (req, res) => {
-    console.log("/");
     res.send('Hello World');
 });
 
