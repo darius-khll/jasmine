@@ -5,7 +5,9 @@ var app = express();
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
-var server = app.listen(3000);
+var server = app.listen(3000, () => {
+    console.log('runs in port 3000');
+});
 function closeServer() {
     server.close();
 }
