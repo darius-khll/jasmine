@@ -1,6 +1,7 @@
 import * as request from "request";
-import * as index from "../index"
+import * as customRequest from "../implementations/customRequest";
 import * as injectedModule from "../app/module"
+import * as index from "../index"
 
 var base_url = "http://localhost:3000/";
 
@@ -24,7 +25,7 @@ describe("test server.", () => {
 
     describe("http get of root using async await.", () => {
         it("root should return 200 status code.", async (done) => {
-            let obj = await index.CustomRequest.get(base_url);
+            let obj = await customRequest.CustomRequest.get(base_url);
             expect(obj.response.statusCode).toBe(200);
             index.closeServer();
             done();
