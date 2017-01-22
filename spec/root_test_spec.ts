@@ -3,7 +3,7 @@ import * as customRequest from "../implementations/customRequest";
 import * as injectedModule from "../app/module"
 import * as index from "../index"
 
-var base_url = "http://localhost:3000/";
+var base_url = "http://localhost:3000/test";
 
 describe("test server.", () => {
 
