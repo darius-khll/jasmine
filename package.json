@@ -14,12 +14,14 @@
     "@types/jasmine": "^2.5.40",
     "@types/jasmine-node": "^1.14.30",
     "@types/node": "^6.0.55",
-    "@types/request": "0.0.39"
+    "@types/request": "0.0.39",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "angular": "^1.6.1",
+    "body-parser": "^1.16.0",
     "express": "^4.14.0",
     "jasmine-node": "^1.14.5",
+    "morgan": "^1.7.0",
     "request": "^2.79.0"
   }
 }
