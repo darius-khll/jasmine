@@ -18,12 +18,12 @@ app.component('app', {
     <ng-outlet></ng-outlet>`,
   $routeConfig: [
     { path: '/crisis-center', name: 'CrisisCenter', component: 'crisisCenter', useAsDefault: true },
-    {path: '/heroes', name: 'Heroes', component: 'heroes' }
+    { path: '/heroes', name: 'Heroes', component: 'heroes' }
   ]
 });
 
-app.component('crisisCenter', {template: "<h2>Crisis component</h2>"});
-app.component('heroes', {template: "<h2>Heroes component</h2>"});
+app.component('crisisCenter', { template: "<h2>Crisis component</h2>" });
+app.component('heroes', { template: "<h2>Heroes component</h2>" });
 
 //////////////////////////////////////////////////////////////////////
 
