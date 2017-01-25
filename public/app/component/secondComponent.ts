@@ -1,4 +1,4 @@
 
 app = angular.module('app');
 
-app.component('heroes', { template: "<h2>Second component</h2>" });
+app.component('heroes', { templateUrl: 'app/view/secondView.html'});
