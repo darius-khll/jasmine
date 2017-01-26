@@ -12,13 +12,13 @@ app.component('app', {
   template:
   `<nav>
       <a ng-link="['First']">First</a>
-      <a ng-link="['Heroes']">Heroes</a>
+      <a ng-link="['Second']">Second</a>
       
     </nav>
     <ng-outlet></ng-outlet>`,
   $routeConfig: [
     { path: '/first', name: 'First', component: 'first', useAsDefault: true },
-    { path: '/heroes', name: 'Heroes', component: 'heroes' }
+    { path: '/second', name: 'Second', component: 'second' }
   ]
 });
 
