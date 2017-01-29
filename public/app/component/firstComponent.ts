@@ -3,8 +3,13 @@ app = angular.module('app');
 
 
 class FirstComponent {
-    
+
     public $router: ng.Router;
+
+    public async $onInit()
+    {
+        console.log("started...");
+    }
 
     public check(): void {
         this.goToSecondComponent();
@@ -12,6 +17,11 @@ class FirstComponent {
 
     public goToSecondComponent() {
         this.$router.navigate(['Second']);
+    }
+
+    public async $onDestroy()
+    {
+        console.log("finished...");
     }
 }
 
