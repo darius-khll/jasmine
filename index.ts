@@ -15,6 +15,8 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use(morgan('dev'));
+
 app.use(express.static('public'));
 
 app.get('/test', (req, res) => {
