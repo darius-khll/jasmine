@@ -1,8 +1,12 @@
-import * as request from 'request'
+import * as request from "request"
 import * as express from "express";
+import * as bodyParser from "body-parser"
 import * as morgan from "morgan"; //logger
 
 var app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 

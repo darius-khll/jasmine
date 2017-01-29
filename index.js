@@ -1,6 +1,9 @@
 "use strict";
 const express = require("express");
+const bodyParser = require("body-parser");
 var app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static('public'));
 app.get('/test', (req, res) => {
     res.send('Hello World');
