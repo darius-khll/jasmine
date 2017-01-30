@@ -6,12 +6,17 @@ class FirstComponent {
 
     public $router: ng.Router;
 
-    public async $onInit()
-    {
+    constructor(private $http: ng.IHttpService) {
+
+    }
+
+    public async $onInit() {
         console.log("started...");
     }
 
-    public check(): void {
+    public async check(): Promise<void> {
+        let records: any = await this.$http.get("/getRecords");
+        alert(records.data[0]);
         this.goToSecondComponent();
     }
 
@@ -19,11 +24,12 @@ class FirstComponent {
         this.$router.navigate(['Second']);
     }
 
-    public async $onDestroy()
-    {
+    public async $onDestroy() {
         console.log("finished...");
     }
 }
+
+FirstComponent.$inject = ['$http'];
 
 app.component('first',
     {
