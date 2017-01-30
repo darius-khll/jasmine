@@ -16,6 +16,13 @@ app.use(express.static('public'));
 app.get('/test', (req, res) => {
     res.send('Hello World');
 });
+app.get('/getRecords', (req, res) => {
+    let records = ['a', 'b', 'c'];
+    res.end(JSON.stringify(records));
+});
+app.post('/postRecords', (req, res) => {
+    res.end('done');
+});
 app.get('/*', (req, res) => {
     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
