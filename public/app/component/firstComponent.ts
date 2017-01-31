@@ -6,8 +6,8 @@ class FirstComponent {
 
     public $router: ng.Router;
 
-    constructor(private $http: ng.IHttpService) {
-
+    constructor(private $http: ng.IHttpService, private firstService: FirstService) {
+        console.warn(this.firstService.getFirstServiceRecords());
     }
 
     public async $onInit() {
@@ -29,7 +29,7 @@ class FirstComponent {
     }
 }
 
-FirstComponent.$inject = ['$http'];
+FirstComponent.$inject = ['$http', 'firstService'];
 
 app.component('first',
     {
