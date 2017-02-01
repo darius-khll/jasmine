@@ -1,4 +1,10 @@
 
-app = angular.module('app');
+module ClientApp {
+    export module Component {
 
-app.component('second', { templateUrl: 'app/view/secondView.html'});
+        app = angular.module('app');
+
+        app.component('second', { templateUrl: 'app/view/secondView.html' });
+
+    }
+}
