@@ -1,15 +1,19 @@
 
-app = angular.module('app');
+module ClientApp {
+    export module Service {
 
-class FirstService
-{
-    constructor() {
-    }
+        app = angular.module('app');
 
-    public getFirstServiceRecords(): number
-    {
-        return 12345;
+        export class FirstService {
+            constructor() {
+            }
+
+            public getFirstServiceRecords(): number {
+                return 12345;
+            }
+        }
+
+        app.service('firstService', FirstService);
+
     }
 }
-
-app.service('firstService', FirstService);
