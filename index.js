@@ -23,6 +23,10 @@ app.get('/getRecords', (req, res) => {
 app.post('/postRecords', (req, res) => {
     res.end('done');
 });
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send(`internal server error!`);
+});
 app.get('/*', (req, res) => {
     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
