@@ -19,8 +19,8 @@ app.use(express.static('public'));
 
 
 
-
-
+app.use(require('./controller/secondController'));
+app.use(require('./controller/thirdController'));
 
 app.get('/test', (req, res) => {
     res.send('Hello World');
