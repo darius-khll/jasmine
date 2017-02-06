@@ -18,9 +18,14 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 
 
+let controllerItems = ['secondController', 'thirdController'];
+for(let item of controllerItems)
+{
+   app.use(require(`./controller/${item}`)); 
+}
 
-app.use(require('./controller/secondController'));
-app.use(require('./controller/thirdController'));
+
+
 
 app.get('/test', (req, res) => {
     res.send('Hello World');
@@ -32,6 +37,7 @@ app.get('/getRecords', (req, res) => {
 app.post('/postRecords', (req, res) => {
     res.end('done');
 });
+
 
 
 

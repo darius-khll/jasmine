@@ -13,8 +13,10 @@ app.use(function (req, res, next) {
 });
 app.use(morgan('dev'));
 app.use(express.static('public'));
-app.use(require('./controller/secondController'));
-app.use(require('./controller/thirdController'));
+let controllerItems = ['secondController', 'thirdController'];
+for (let item of controllerItems) {
+    app.use(require(`./controller/${item}`));
+}
 app.get('/test', (req, res) => {
     res.send('Hello World');
 });
