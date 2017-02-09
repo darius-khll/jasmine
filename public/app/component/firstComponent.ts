@@ -7,6 +7,7 @@ module ClientApp {
 
         export class FirstComponent {
             public $router: ng.Router;
+            public firstMessage: string = "First component message";
 
             constructor(private $http: ng.IHttpService, private firstService: Service.FirstService) {
                 console.warn(this.firstService.getFirstServiceRecords());
