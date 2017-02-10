@@ -30,8 +30,8 @@ for(let item of controllerItems)
 app.get('/test', (req, res) => {
     res.send('Hello World');
 });
-app.get('/getRecords', (req, res) => {
-    let records = ['a', 'b', 'c'];
+app.get('/getRecords/:id', (req, res) => {
+    let records = ['a', 'b', 'c', req.params.id];
     res.end(JSON.stringify(records));
 });
 app.post('/postRecords', (req, res) => {
