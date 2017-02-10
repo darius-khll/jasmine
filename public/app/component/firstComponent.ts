@@ -18,7 +18,7 @@ module ClientApp {
             }
 
             public async check(): Promise<void> {
-                let records: any = await this.$http.get("/getRecords");
+                let records: any = await this.$http.get("/getRecords/123");
                 alert(records.data[0]);
                 this.goToSecondComponent();
             }
