@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "angular": "^1.6.1",
-    "angular-component-router": "^0.2.1"
+    "angular-component-router": "^0.2.1",
+    "jquery": "^3.1.1"
   }
 }
