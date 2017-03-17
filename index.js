@@ -2,7 +2,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan"); //logger
+const fs = require("fs");
 var app = express();
+app.use(function (req, res, next) {
+    let val = '';
+    for (let i = 0; i < 6; i++) {
+        val += (Math.random() * 100).toFixed(0);
+    }
+    res.header('Cache-Control', 'max-age=10000000, public');
+    res.header('Pragma', 'public');
+    res.header('Expires', 'max');
+    res.header('Etag', val);
+    next();
+});
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(function (req, res, next) {
@@ -34,7 +46,14 @@ app.use((err, req, res, next) => {
 app.get('/*', (req, res) => {
     res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
-var server = app.listen(3000, () => {
+var options = {
+    key: fs.readFileSync("privatekey.pem"),
+    cert: fs.readFileSync("certificate.pem")
+};
+var PORT = 3002;
+var HOST = 'localhost';
+//var server = https.createServer(options, app).listen(PORT, HOST);
+var server = app.listen(3001, () => {
     console.log('runs in port 3000');
 });
 function closeServer() {
