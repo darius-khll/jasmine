@@ -14,9 +14,9 @@ app.use(function (req, res, next) {
     }
 
     res.header('Cache-Control', 'max-age=10000000, public');
-    res.header('Pragma', 'public');
-    res.header('Expires', 'max');
-    res.header('Etag', val);
+    //res.header('Pragma', 'public');
+    //res.header('Expires', 'max');
+    //res.header('Etag', val);
     next();
 });
 
