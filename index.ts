@@ -6,14 +6,14 @@ import * as https from "https"
 import * as fs from "fs"
 var app = express();
 
+var projectConfig: { version: string } = require("./public/projectConfig.json");
+
 app.use(require('./middlewares/cacheMiddleware'));
-
 app.use(morgan('dev'));
-app.use(express.static('public'));
 
+app.use("/static", express.static('public'));
 app.use(require('./middlewares/defaultHeaderMiddleware'));
 app.use(require('./middlewares/controller'));
-
 app.use(require('./middlewares/exceptionHandlerMiddleware'));
 
 app.get('/*', (req, res) => {

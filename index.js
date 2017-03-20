@@ -3,9 +3,10 @@ const express = require("express");
 const morgan = require("morgan"); //logger
 const fs = require("fs");
 var app = express();
+var projectConfig = require("./public/projectConfig.json");
 app.use(require('./middlewares/cacheMiddleware'));
 app.use(morgan('dev'));
-app.use(express.static('public'));
+app.use("/static", express.static('public'));
 app.use(require('./middlewares/defaultHeaderMiddleware'));
 app.use(require('./middlewares/controller'));
 app.use(require('./middlewares/exceptionHandlerMiddleware'));
