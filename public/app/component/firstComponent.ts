@@ -36,7 +36,7 @@ module ClientApp {
 
         app.component('first',
             {
-                templateUrl: "app/view/firstView.html",
+                templateUrl: "static/app/view/firstView.html",
                 controller: FirstComponent,
                 controllerAs: 'vm',
                 bindings: { $router: '<' }
