@@ -6,5 +6,8 @@
         "moduleResolution": "node",
         "watch": true
     },
-    "compileOnSave": true
+    "compileOnSave": true,
+    "exclude": [
+        "node_modules", "public/bower_components"
+    ]
 }
