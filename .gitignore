@@ -4,5 +4,6 @@
 server/node_modules
 
 public/bower_components
+public/node_modules
 
 npm-debug.log
