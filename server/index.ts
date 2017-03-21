@@ -18,8 +18,7 @@ app.use(require('./middlewares/controller'));
 app.use(require('./middlewares/exceptionHandlerMiddleware'));
 
 app.get('/*', (req, res) => {
-    res.send(`${__dirname} - ${__filename}`);
-    //res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    res.sendfile(`${__dirname.replace('\server', '\public')}` + `\\index.html`); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 
