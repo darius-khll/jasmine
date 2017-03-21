@@ -8,6 +8,6 @@
     },
     "compileOnSave": true,
     "exclude": [
-        "node_modules", "public/bower_components"
+        "server/node_modules", "public/bower_components"
     ]
 }
