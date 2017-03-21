@@ -1,5 +1,5 @@
 
-import Service = ClientApp.Service;
+//import Service = ClientApp.Service;
 
 module ClientApp {
     export module Component {
@@ -9,7 +9,7 @@ module ClientApp {
             public $router: ng.Router;
             public firstMessage: string = "First component message";
 
-            constructor(private $http: ng.IHttpService, private firstService: Service.FirstService) {
+            constructor(private $http: ng.IHttpService, private firstService: ClientApp.Service.FirstService) {
                 console.warn(this.firstService.getFirstServiceRecords());
             }
 
