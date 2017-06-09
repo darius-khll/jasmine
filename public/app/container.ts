@@ -1,7 +1,6 @@
 
 var app = angular.module('app', ["ngComponentRouter"]);
 
-
 app.config(function ($locationProvider) {
   $locationProvider.html5Mode(true);
 })
