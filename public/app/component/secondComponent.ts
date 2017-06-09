@@ -4,7 +4,24 @@ module ClientApp {
 
         app = angular.module('app');
 
-        app.component('second', { templateUrl: 'static/app/view/secondView.html' });
+        export class SecondComponent {
+            public $router: ng.Router;
+
+            constructor() {
+            }
+
+            public async $onInit() {
+                
+                let a = this.$router;
+                debugger;
+            }
+        }
+
+        app.component('second', { 
+            templateUrl: 'static/app/view/secondView.html',
+            controller: SecondComponent,
+            bindings: { $router: '<' }
+        });
 
     }
 }
