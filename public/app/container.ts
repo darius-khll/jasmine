@@ -18,6 +18,7 @@ app.component('app', {
     <ng-outlet></ng-outlet>`,
   $routeConfig: [
     { path: '/first', name: 'First', component: 'first', useAsDefault: true },
+    { path: '/second/:id', name: 'SecondWithParameter', component: 'second' }, //optional
     { path: '/second', name: 'Second', component: 'second' },
     { path: '**', component: 'first' }
   ]
